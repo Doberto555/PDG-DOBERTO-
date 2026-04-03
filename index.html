@@ -2,73 +2,86 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mes Projets - PDG DOBERTO</title>
+  <title>PDG DOBERTO LLC - Portfolio</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: black;
       color: white;
     }
 
     header {
-      background: #020617;
+      position: fixed;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
       padding: 20px;
-      text-align: center;
+      z-index: 10;
     }
 
     header h1 {
       margin: 0;
-      color: #38bdf8;
+      color: red;
     }
 
-    nav {
-      margin-top: 10px;
+    .hero {
+      height: 90vh;
+      background: url(https://files.catbox.moe/49p71o.jpg) center/cover;
+      display: flex;
+      align-items: center;
+      padding: 50px;
     }
 
-    nav a {
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: red;
+      border: none;
       color: white;
-      margin: 0 15px;
-      text-decoration: none;
+      margin-top: 10px;
+      cursor: pointer;
     }
 
     section {
-      padding: 50px;
-      text-align: center;
+      padding: 40px;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
+      min-width: 250px;
+      height: 150px;
+      background: #111;
       border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s;
     }
 
-    .card h3 {
-      color: #38bdf8;
+    .card:hover {
+      transform: scale(1.1);
     }
 
     footer {
-      background: #020617;
-      padding: 20px;
       text-align: center;
-      margin-top: 30px;
+      padding: 20px;
+      background: #111;
     }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #38bdf8;
-      color: black;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
   </style>
 </head>
 
@@ -76,50 +89,47 @@
 
 <header>
   <h1>PDG DOBERTO LLC</h1>
-  <nav>
-    <a href="#home">Accueil</a>
-    <a href="#projects">Projets</a>
-    <a href="#about">À propos</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<section id="home">
-  <h2>Bienvenue 👋</h2>
-  <p>Je présente ici tous mes projets et réalisations.</p>
-</section>
+<div class="hero">
+  <div class="hero-text">
+    <h2>Bienvenue 👑</h2>
+    <p>Découvre mes projets comme sur Netflix 🔥</p>
+    <button class="btn" onclick="window.location='#projects'">Voir les projets</button>
+  </div>
+</div>
 
 <section id="projects">
   <h2>🔥 Mes Projets</h2>
-  <div class="projects">
+  <div class="scroll">
 
     <div class="card">
       <h3>Projet 1</h3>
-      <p>Description de ton projet ici.</p>
+      <p>Ton projet ici</p>
     </div>
 
     <div class="card">
       <h3>Projet 2</h3>
-      <p>Description de ton projet ici.</p>
+      <p>Ton projet ici</p>
     </div>
 
     <div class="card">
       <h3>Projet 3</h3>
-      <p>Description de ton projet ici.</p>
+      <p>Ton projet ici</p>
+    </div>
+
+    <div class="card">
+      <h3>Projet 4</h3>
+      <p>Ton projet ici</p>
     </div>
 
   </div>
 </section>
 
-<section id="about">
-  <h2>À propos</h2>
-  <p>Je suis PDG DOBERTO, entrepreneur digital spécialisé dans les services en ligne.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
+<section>
+  <h2>📞 Contact</h2>
   <p>WhatsApp : +1 289 481 0858</p>
-  <button onclick="alert('Contact moi sur WhatsApp')">Me contacter</button>
+  <button class="btn" onclick="window.open('https://wa.me/12894810858')">Me contacter</button>
 </section>
 
 <footer>
