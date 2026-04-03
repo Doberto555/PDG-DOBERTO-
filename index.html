@@ -2,18 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>PDG DOBERTO LLC - Vente</title>
+  <title>PDG DOBERTO LLC - Vente Optimisée</title>
 
   <style>
     body { margin:0; font-family:Arial; background:black; color:white; }
 
     header { position:fixed; width:100%; background:rgba(0,0,0,0.9); padding:20px; z-index:10; }
-    header h1 { margin:0; color:red; }
+    header h1 { margin:0; color:red; font-size:24px; }
 
-    .hero { height:90vh; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover; display:flex; align-items:center; padding:50px; }
-    .hero h2 { font-size:50px; }
+    .hero { height:90vh; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover; display:flex; align-items:center; justify-content:center; padding:50px; text-align:center; }
+    .hero h2 { font-size:50px; margin-bottom:10px; }
+    .hero p { font-size:20px; margin-bottom:20px; }
 
-    .btn { padding:12px 20px; background:red; border:none; color:white; cursor:pointer; }
+    .btn { padding:12px 20px; background:red; border:none; color:white; cursor:pointer; font-size:18px; }
 
     section { padding:40px; }
 
@@ -21,20 +22,31 @@
 
     .scroll { display:flex; overflow-x:auto; gap:15px; }
 
-    .card { min-width:260px; background:#111; border-radius:10px; overflow:hidden; }
+    .card { min-width:260px; background:#111; border-radius:10px; overflow:hidden; flex-shrink:0; }
     .card img { width:100%; height:150px; object-fit:cover; }
     .card-content { padding:10px; }
 
-    .price { color:#00ffcc; font-weight:bold; }
+    .price { color:#00ffcc; font-weight:bold; font-size:18px; }
 
-    .buy-btn { margin-top:10px; padding:10px; width:100%; background:#25D366; border:none; color:white; cursor:pointer; }
+    .buy-btn { margin-top:10px; padding:10px; width:100%; background:#25D366; border:none; color:white; cursor:pointer; font-size:16px; }
 
-    .urgent { color:red; font-weight:bold; margin-top:10px; }
+    .urgent { color:red; font-weight:bold; margin-top:10px; font-size:16px; }
 
     .proof { background:#111; padding:20px; border-radius:10px; text-align:center; }
 
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; }
+    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; font-weight:bold; }
 
+    .instructions { background:#222; padding:15px; border-radius:10px; margin-top:10px; font-size:16px; }
+
+    @media (max-width:768px) {
+      header h1 { font-size:20px; }
+      .hero { height:70vh; padding:20px; }
+      .hero h2 { font-size:28px; }
+      .hero p { font-size:16px; }
+      .btn { font-size:16px; padding:10px 15px; }
+      .card { min-width:200px; }
+      .price, .urgent, .instructions, .buy-btn { font-size:14px; }
+    }
   </style>
 </head>
 
@@ -47,14 +59,14 @@
 <div class="hero">
   <div>
     <h2>Gagne plus de clients 🚀</h2>
-    <p>Automatisation + visibilité + résultats</p>
+    <p>Paiement clair, rapide et simple via MonCash / NatCash</p>
     <button class="btn" onclick="window.location='#projects'">Commander maintenant</button>
   </div>
 </div>
 
 <section>
   <h2>📊 Clients satisfaits</h2>
-  <div class="counter" id="counter">0</div>
+  <div class="counter" id="counter">0 clients</div>
 </section>
 
 <section id="projects">
@@ -62,24 +74,34 @@
   <div class="scroll">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" />
+      <img src="https://files.catbox.moe/xgacmr.png" />
       <div class="card-content">
         <h3>Bot WhatsApp</h3>
         <p>Automatisation complète</p>
         <div class="price">500 Gdes</div>
         <div class="urgent">Offre limitée ⚠️</div>
-        <button class="buy-btn" onclick="pay('Bot WhatsApp',500)">Payer maintenant</button>
+        <div class="instructions">
+          1️⃣ Envoie 500 Gdes via MonCash ou NatCash<br>
+          2️⃣ Clique sur WhatsApp pour confirmer<br>
+          3️⃣ Reçois ton service immédiatement
+        </div>
+        <button class="buy-btn" onclick="confirmPayment('Bot WhatsApp',500)">Confirmer paiement</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" />
+      <img src="https://files.catbox.moe/y2g2ak.png" />
       <div class="card-content">
         <h3>Vues WhatsApp</h3>
         <p>Boost rapide</p>
         <div class="price">1000 Gdes</div>
         <div class="urgent">Stock limité ⚠️</div>
-        <button class="buy-btn" onclick="pay('Vues WhatsApp',1000)">Payer maintenant</button>
+        <div class="instructions">
+          1️⃣ Envoie 1000 Gdes via MonCash ou NatCash<br>
+          2️⃣ Clique sur WhatsApp pour confirmer<br>
+          3️⃣ Reçois ton service immédiatement
+        </div>
+        <button class="buy-btn" onclick="confirmPayment('Vues WhatsApp',1000)">Confirmer paiement</button>
       </div>
     </div>
 
@@ -95,6 +117,7 @@
 
 <section>
   <h2>📞 Contact</h2>
+  <p>Numéro visible et toujours prêt à répondre :</p>
   <button class="btn" onclick="window.open('https://wa.me/12894810858')">WhatsApp</button>
 </section>
 
@@ -105,34 +128,15 @@
 <a class="whatsapp" href="https://wa.me/12894810858" target="_blank">WhatsApp</a>
 
 <script>
-// compteur clients fake dynamique
 let count = 87;
 setInterval(()=>{
   count++;
   document.getElementById('counter').innerText = count + ' clients';
 },2000);
 
-// paiement amélioré avec choix méthode
-function pay(service,price){
-  let message = `Paiement pour ${service} (${price} Gdes)
-Choisis méthode:
-1. MonCash
-2. NatCash
-3. Carte`;
-  let choice = prompt(message);
-
-  if(choice == "1"){
-    alert("Envoie paiement via MonCash au numéro +509XXXXXXXX");
-  }
-  else if(choice == "2"){
-    alert("Envoie paiement via NatCash au numéro +509XXXXXXXX");
-  }
-  else if(choice == "3"){
-    alert("Paiement carte bientôt disponible");
-  }
-
-  // confirmation WhatsApp
-  window.open('https://wa.me/12894810858?text=J\'ai payé pour '+service);
+function confirmPayment(service,price){
+  alert(`Paiement pour ${service} (${price} Gdes) reçu. Clique sur WhatsApp pour confirmer.`);
+  window.open(`https://wa.me/12894810858?text=J'ai payé pour ${service}`);
 }
 </script>
 
