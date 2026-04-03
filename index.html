@@ -2,50 +2,51 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>PDG DOBERTO LLC - Vente Optimisée</title>
+  <title>PDG DOBERTO LLC - Vente Optimisée Mobile</title>
 
   <style>
     body { margin:0; font-family:Arial; background:black; color:white; }
 
-    header { position:fixed; width:100%; background:rgba(0,0,0,0.9); padding:20px; z-index:10; }
-    header h1 { margin:0; color:red; font-size:24px; }
+    header { position:fixed; width:100%; background:rgba(0,0,0,0.9); padding:15px; z-index:10; text-align:center; }
+    header h1 { margin:0; color:red; font-size:20px; }
 
-    .hero { height:90vh; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover; display:flex; align-items:center; justify-content:center; padding:50px; text-align:center; }
-    .hero h2 { font-size:50px; margin-bottom:10px; }
-    .hero p { font-size:20px; margin-bottom:20px; }
+    .hero { height:60vh; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover; display:flex; align-items:center; justify-content:center; padding:20px; text-align:center; }
+    .hero h2 { font-size:24px; margin-bottom:10px; }
+    .hero p { font-size:14px; margin-bottom:15px; }
 
-    .btn { padding:12px 20px; background:red; border:none; color:white; cursor:pointer; font-size:18px; }
+    .btn { padding:10px 15px; background:red; border:none; color:white; cursor:pointer; font-size:16px; }
 
-    section { padding:40px; }
+    section { padding:20px; }
 
-    .counter { font-size:30px; color:#00ffcc; }
+    .counter { font-size:20px; color:#00ffcc; text-align:center; }
 
-    .scroll { display:flex; overflow-x:auto; gap:15px; }
+    .scroll { display:flex; overflow-x:auto; gap:10px; padding-bottom:10px; }
 
-    .card { min-width:260px; background:#111; border-radius:10px; overflow:hidden; flex-shrink:0; }
-    .card img { width:100%; height:150px; object-fit:cover; }
+    .card { min-width:180px; background:#111; border-radius:10px; overflow:hidden; flex-shrink:0; }
+    .card img { width:100%; height:120px; object-fit:cover; }
     .card-content { padding:10px; }
 
-    .price { color:#00ffcc; font-weight:bold; font-size:18px; }
+    .price { color:#00ffcc; font-weight:bold; font-size:16px; }
 
-    .buy-btn { margin-top:10px; padding:10px; width:100%; background:#25D366; border:none; color:white; cursor:pointer; font-size:16px; }
+    .buy-btn { margin-top:10px; padding:8px; width:100%; background:#25D366; border:none; color:white; cursor:pointer; font-size:14px; }
 
-    .urgent { color:red; font-weight:bold; margin-top:10px; font-size:16px; }
+    .urgent { color:red; font-weight:bold; margin-top:8px; font-size:14px; }
 
-    .proof { background:#111; padding:20px; border-radius:10px; text-align:center; }
+    .proof { background:#111; padding:15px; border-radius:10px; text-align:center; font-size:14px; }
 
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; font-weight:bold; }
+    .whatsapp { position:fixed; bottom:15px; right:15px; background:#25D366; color:white; padding:12px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:14px; }
 
-    .instructions { background:#222; padding:15px; border-radius:10px; margin-top:10px; font-size:16px; }
+    .instructions { background:#222; padding:10px; border-radius:10px; margin-top:10px; font-size:12px; }
 
-    @media (max-width:768px) {
-      header h1 { font-size:20px; }
-      .hero { height:70vh; padding:20px; }
-      .hero h2 { font-size:28px; }
-      .hero p { font-size:16px; }
-      .btn { font-size:16px; padding:10px 15px; }
-      .card { min-width:200px; }
-      .price, .urgent, .instructions, .buy-btn { font-size:14px; }
+    @media (min-width:769px) {
+      .hero { height:90vh; padding:50px; }
+      .hero h2 { font-size:50px; }
+      .hero p { font-size:20px; }
+      .btn { font-size:18px; padding:12px 20px; }
+      .counter { font-size:30px; }
+      .card { min-width:260px; }
+      .price, .urgent, .instructions, .buy-btn { font-size:16px; }
+      .proof { font-size:16px; }
     }
   </style>
 </head>
