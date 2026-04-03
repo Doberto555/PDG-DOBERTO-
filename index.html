@@ -2,86 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>PDG DOBERTO LLC - Portfolio</title>
+  <title>PDG DOBERTO LLC - Vente</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: black;
-      color: white;
-    }
+    body { margin:0; font-family:Arial; background:black; color:white; }
 
-    header {
-      position: fixed;
-      width: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-      padding: 20px;
-      z-index: 10;
-    }
+    header { position:fixed; width:100%; background:rgba(0,0,0,0.9); padding:20px; z-index:10; }
+    header h1 { margin:0; color:red; }
 
-    header h1 {
-      margin: 0;
-      color: red;
-    }
+    .hero { height:90vh; background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover; display:flex; align-items:center; padding:50px; }
+    .hero h2 { font-size:50px; }
 
-    .hero {
-      height: 90vh;
-      background: url(https://files.catbox.moe/49p71o.jpg) center/cover;
-      display: flex;
-      align-items: center;
-      padding: 50px;
-    }
+    .btn { padding:12px 20px; background:red; border:none; color:white; cursor:pointer; }
 
-    .hero-text {
-      max-width: 500px;
-    }
+    section { padding:40px; }
 
-    .hero h2 {
-      font-size: 50px;
-    }
+    .counter { font-size:30px; color:#00ffcc; }
 
-    .btn {
-      padding: 10px 20px;
-      background: red;
-      border: none;
-      color: white;
-      margin-top: 10px;
-      cursor: pointer;
-    }
+    .scroll { display:flex; overflow-x:auto; gap:15px; }
 
-    section {
-      padding: 40px;
-    }
+    .card { min-width:260px; background:#111; border-radius:10px; overflow:hidden; }
+    .card img { width:100%; height:150px; object-fit:cover; }
+    .card-content { padding:10px; }
 
-    h2 {
-      margin-bottom: 20px;
-    }
+    .price { color:#00ffcc; font-weight:bold; }
 
-    .scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-    }
+    .buy-btn { margin-top:10px; padding:10px; width:100%; background:#25D366; border:none; color:white; cursor:pointer; }
 
-    .card {
-      min-width: 250px;
-      height: 150px;
-      background: #111;
-      border-radius: 10px;
-      padding: 15px;
-      transition: transform 0.3s;
-    }
+    .urgent { color:red; font-weight:bold; margin-top:10px; }
 
-    .card:hover {
-      transform: scale(1.1);
-    }
+    .proof { background:#111; padding:20px; border-radius:10px; text-align:center; }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-    }
+    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; }
+
   </style>
 </head>
 
@@ -92,49 +45,96 @@
 </header>
 
 <div class="hero">
-  <div class="hero-text">
-    <h2>Bienvenue 👑</h2>
-    <p>Découvre mes projets comme sur Netflix 🔥</p>
-    <button class="btn" onclick="window.location='#projects'">Voir les projets</button>
+  <div>
+    <h2>Gagne plus de clients 🚀</h2>
+    <p>Automatisation + visibilité + résultats</p>
+    <button class="btn" onclick="window.location='#projects'">Commander maintenant</button>
   </div>
 </div>
 
+<section>
+  <h2>📊 Clients satisfaits</h2>
+  <div class="counter" id="counter">0</div>
+</section>
+
 <section id="projects">
-  <h2>🔥 Mes Projets</h2>
+  <h2>🔥 Services</h2>
   <div class="scroll">
 
     <div class="card">
-      <h3>Projet 1</h3>
-      <p>Ton projet ici</p>
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" />
+      <div class="card-content">
+        <h3>Bot WhatsApp</h3>
+        <p>Automatisation complète</p>
+        <div class="price">500 Gdes</div>
+        <div class="urgent">Offre limitée ⚠️</div>
+        <button class="buy-btn" onclick="pay('Bot WhatsApp',500)">Payer maintenant</button>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Projet 2</h3>
-      <p>Ton projet ici</p>
-    </div>
-
-    <div class="card">
-      <h3>Projet 3</h3>
-      <p>Ton projet ici</p>
-    </div>
-
-    <div class="card">
-      <h3>Projet 4</h3>
-      <p>Ton projet ici</p>
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" />
+      <div class="card-content">
+        <h3>Vues WhatsApp</h3>
+        <p>Boost rapide</p>
+        <div class="price">1000 Gdes</div>
+        <div class="urgent">Stock limité ⚠️</div>
+        <button class="buy-btn" onclick="pay('Vues WhatsApp',1000)">Payer maintenant</button>
+      </div>
     </div>
 
   </div>
 </section>
 
 <section>
+  <h2>📊 Preuves</h2>
+  <div class="proof">
+    <p>+100 clients satisfaits ✅</p>
+  </div>
+</section>
+
+<section>
   <h2>📞 Contact</h2>
-  <p>WhatsApp : +1 289 481 0858</p>
-  <button class="btn" onclick="window.open('https://wa.me/12894810858')">Me contacter</button>
+  <button class="btn" onclick="window.open('https://wa.me/12894810858')">WhatsApp</button>
 </section>
 
 <footer>
   <p>© 2026 PDG DOBERTO LLC</p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/12894810858" target="_blank">WhatsApp</a>
+
+<script>
+// compteur clients fake dynamique
+let count = 87;
+setInterval(()=>{
+  count++;
+  document.getElementById('counter').innerText = count + ' clients';
+},2000);
+
+// paiement amélioré avec choix méthode
+function pay(service,price){
+  let message = `Paiement pour ${service} (${price} Gdes)
+Choisis méthode:
+1. MonCash
+2. NatCash
+3. Carte`;
+  let choice = prompt(message);
+
+  if(choice == "1"){
+    alert("Envoie paiement via MonCash au numéro +509XXXXXXXX");
+  }
+  else if(choice == "2"){
+    alert("Envoie paiement via NatCash au numéro +509XXXXXXXX");
+  }
+  else if(choice == "3"){
+    alert("Paiement carte bientôt disponible");
+  }
+
+  // confirmation WhatsApp
+  window.open('https://wa.me/12894810858?text=J\'ai payé pour '+service);
+}
+</script>
 
 </body>
 </html>
